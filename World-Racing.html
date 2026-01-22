@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>World Racing – Mods</title>
+  <link rel="icon" type="image/png" href="icon.png" />
+
+  <!-- FUENTES -->
+  <link href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing:border-box; }
+    body { 
+      margin:0; 
+      font-family:'Montserrat', Arial, sans-serif; 
+      background:#f7f7f7; 
+      color:#333; 
+      line-height:1.6;
+    }
+
+    /* NAV */
+    nav { 
+      background:#fff; 
+      display:flex; 
+      justify-content:space-between; 
+      align-items:center; 
+      padding:15px 30px; 
+      border-bottom:1px solid #ddd; 
+      position:relative; 
+      z-index:10; 
+      box-shadow:0 2px 6px rgba(0,0,0,0.05);
+    }
+    nav .logo img {
+      height: 50px;
+      width: auto;
+      display: block;
+    }
+    nav ul { 
+      list-style:none; 
+      display:flex; 
+      gap:22px; 
+      margin:0; 
+      padding:0; 
+      font-size:14px; 
+      font-weight:600; 
+      color:#555;
+    }
+
+    /* HERO */
+    .hero {
+      height:680px;
+      background:url("assets/hero-car.png") center/cover no-repeat;
+      margin-top:-70px;
+      position:relative;
+      z-index:1;
+      border-bottom-left-radius:18px;
+      border-bottom-right-radius:18px;
+      box-shadow:0 8px 25px rgba(0,0,0,0.08);
+    }
+
+    .hero::before {
+      content:"";
+      position:absolute;
+      top:0; left:0; right:0;
+      height:120px;
+      background:linear-gradient(to bottom, #fff, rgba(255,255,255,0));
+    }
+
+    /* SECCIONES */
+    section { 
+      background:#fff; 
+      padding:60px 20px; 
+    }
+    .center { text-align:center; }
+
+    h2 { 
+      font-family:'Racing Sans One', sans-serif; 
+      font-size:32px; 
+      margin-bottom:15px; 
+      color:#1c1c1c;
+    }
+
+    .icons { 
+      display:flex; 
+      justify-content:center; 
+      gap:28px; 
+      flex-wrap:wrap; 
+      margin-top:20px; 
+      font-size:14px; 
+      font-weight:600; 
+      color:#666;
+    }
+
+    .experience { 
+      display:grid; 
+      grid-template-columns: 1fr 1.2fr; 
+      gap:40px; 
+      max-width:1100px; 
+      margin:auto; 
+      align-items:center;
+    }
+    .experience img { 
+      width:100%; 
+      border-radius:10px; 
+      box-shadow:0 8px 20px rgba(0,0,0,0.1);
+    }
+    .experience h3 { 
+      font-family:'Racing Sans One', sans-serif; 
+      font-size:26px; 
+      color:#1c1c1c;
+    }
+    .experience p {
+      color:#555;
+      font-size:15px;
+      margin-top:10px;
+    }
+    .checklist { 
+      display:grid; 
+      grid-template-columns:1fr 1fr; 
+      gap:10px; 
+      margin-top:15px; 
+      font-size:14px; 
+      color:#444;
+    }
+
+    /* MODS */
+    .mods { 
+      display:grid; 
+      grid-template-columns:repeat(3,1fr); 
+      gap:25px; 
+      max-width:1100px; 
+      margin:40px auto 0; 
+    }
+    .mod-card { 
+      text-decoration:none; 
+      color:#fff; 
+      display:block; 
+      border-radius:12px;
+      overflow:hidden;
+      transition:transform 0.3s, box-shadow 0.3s;
+      box-shadow:0 4px 12px rgba(0,0,0,0.08);
+    }
+    .mod-card img { 
+      width:100%; 
+      height:220px; 
+      object-fit:cover; 
+      display:block; 
+      transition: transform 0.3s;
+    }
+    .mod-card div {
+      background:#d40000; /* rojo más elegante */
+      padding:14px;
+      text-align:center;
+      font-family:'Racing Sans One', sans-serif;
+      font-size:20px;
+      letter-spacing:1px;
+      transition:.3s;
+    }
+    .mod-card:hover div { background:#b80000; }
+    .mod-card:hover { 
+      transform:translateY(-4px); 
+      box-shadow:0 12px 25px rgba(0,0,0,0.12);
+    }
+
+    /* FOOTER */
+    footer { 
+      background:#0c2746; /* azul profundo y elegante */
+      color:#fff; 
+      padding:20px 20px; /* mucho más compacto */
+      font-size:14px;
+    }
+    footer .grid { 
+      display:grid; 
+      grid-template-columns:repeat(4,1fr); 
+      gap:25px; 
+      max-width:1100px; 
+      margin:auto; 
+    }
+    footer h4 { 
+      font-family:'Racing Sans One', sans-serif; 
+      font-size:17px; 
+      margin-bottom:8px;
+      color:#fff;
+    }
+    footer p { color:#ccc; font-size:13px; }
+    footer small { 
+      display:block; 
+      text-align:center; 
+      margin-top:12px; /* menos alto */
+      opacity:.8; 
+      font-size:13px;
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:900px){
+      .experience { grid-template-columns:1fr; }
+      .mods { grid-template-columns:1fr; }
+      footer .grid { grid-template-columns:1fr 1fr; }
+    }
+
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="World-Racing.html" class="logo">
+    <img src="icon.png" alt="World Racing">
+  </a>
+  <ul>
+    <li>World - Racing</li>
+  </ul>
+</nav>
+
+<div class="hero"></div>
+
+<section class="center">
+  <h2>Built Mods & Performance</h2>
+  <div class="icons">
+    <span>Outlaw</span>
+    <span>Promod</span>
+    <span>Super Street</span>
+    <span>Funny Car</span>
+    <span>Pro Modified</span>
+  </div>
+</section>
+
+<section>
+  <div class="experience">
+    <img src="assets/showcase-engine.png" alt="Equipo">
+    <div>
+      <h3>Experience Makes The Difference</h3>
+      <p>The only platform focused exclusively on real high-performance mods for drag racing in BeamNG.</p>
+      <div class="checklist">
+        <span>✔ ECUs</span>
+        <span>✔ Vehicles</span>
+        <span>✔ Exhaust Systems</span>
+        <span>✔ Engines</span>
+        <span>✔ Built Engines</span>
+        <span>✔ Exclusive content</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="center">
+  <h2>Mods</h2>
+  <div class="mods">
+
+    <a class="mod-card" href="https://discord.gg/Ha6hPg3hZP" target="_blank">
+      <img src="assets/ej25.png" alt="EJ25">
+      <div>ENGINES</div>
+    </a>
+
+    <a class="mod-card" href="https://discord.gg/Ha6hPg3hZP" target="_blank">
+      <img src="assets/asphalt.png" alt="ASPHALT">
+      <div>PARTS</div>
+    </a>
+
+    <a class="mod-card" href="https://discord.gg/Ha6hPg3hZP" target="_blank">
+      <img src="assets/promod.png" alt="PROMOD">
+      <div>VEHICLES</div>
+    </a>
+
+  </div>
+</section>
+
+<footer>
+  <div class="grid">
+    <div>
+      <h4>About</h4>
+      <p>High performance mods & machining.</p>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <p>Mods, tuning, performance parts.</p>
+    </div>
+  </div>
+  <small>World Racing ™</small>
+</footer>
+
+</body>
+</html>
